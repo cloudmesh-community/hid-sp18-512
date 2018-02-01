@@ -18,3 +18,4 @@ Institution: Indiana University - Bloomington
 
 ## Week 3
 - 01/27/18 - Setup Github, Chameleon, and Future Systems accounts.
+- 01/29/18 - Completed the New Technology assignment in Google docs.
