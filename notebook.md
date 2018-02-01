@@ -1,8 +1,8 @@
 # hid-sp18-512
 
-Author : Felix Kikaya
-Course : Advanced Cloud Computing - I524
-Semester : Spring 2018
+Author : Felix Kikaya <br/>
+Course : Advanced Cloud Computing - I524 <br/>
+Semester : Spring 2018 <br/>
 Institution: Indiana University - Bloomington
 			
 ## Week 1
