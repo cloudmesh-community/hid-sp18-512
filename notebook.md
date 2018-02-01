@@ -1,6 +1,6 @@
-		**hid-sp18-512**
+		**#hid-sp18-512**
 			
-__Week 1
+##Week 1
 
 - 01/13/18 - Participated in the online meeting session
 - 01/15/18 - Participated in the bio Assignment on Piazza.
