@@ -21,7 +21,7 @@ Institution: Indiana University - Bloomington
 - 01/29/18 - Completed the New Technology assignment in Google docs.
 
 ## Week 4
-- 01/01/18Read the handbook
+- 01/01/18 Read the handbook
 
 ## Week 5
 - 02/05/18 - Setup MongoDB and installed python through pyenv
