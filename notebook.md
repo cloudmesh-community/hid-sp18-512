@@ -26,3 +26,9 @@ Institution: Indiana University - Bloomington
 ## Week 5
 - 02/05/18 - Setup MongoDB and installed python through pyenv
 - 02/06/18 - Completed REST assignment
+
+## Week 6
+- 02/12/18 - Started technology Abstracts
+- Due to business assignments, this week was slow and requested to catch up later.
+## Week 7
+-02/19/18 - Read handbook
