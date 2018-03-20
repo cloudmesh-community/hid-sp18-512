@@ -30,5 +30,9 @@ Institution: Indiana University - Bloomington
 ## Week 6
 - 02/12/18 - Started technology Abstracts
 - Due to business assignments, this week was slow and requested to catch up later.
+
 ## Week 7
 - 02/19/18 - Read handbook
+
+## Week 8
+- 02/26/18 - Read handbook
