@@ -36,3 +36,6 @@ Institution: Indiana University - Bloomington
 
 ## Week 8
 - 02/26/18 - Read handbook
+
+## Week 9
+- 03/05/18 - Read handbook
