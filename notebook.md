@@ -39,3 +39,9 @@ Institution: Indiana University - Bloomington
 
 ## Week 9
 - 03/05/18 - Read handbook
+## Week 10
+- 03/12/18 - Read Handbook
+## Week 11
+- 03/19/18 - Signed up for shareLatex
+- 03/19/18 - Installed Jabref
+- 03/19/18 - Finished Technology abstracts homework
