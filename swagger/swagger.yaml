@@ -8,7 +8,7 @@ info:
     name: "Felix Kikaya"
     email: "fkikaya@iu.edu
   license:
-    name: "Apache"
+name: "Apache"
 host: "localhost:8080"
 basePath: "/api"
 schemes:
