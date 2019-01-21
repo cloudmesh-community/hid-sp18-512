@@ -1,8 +1,5 @@
+<h1> <img alt="icon" src="../images/icon.png" width="100" style ="float:left"> <hr>GOOGLE CLOUD COMPUTE SERVICES <hr></h1>
 
-<img src="../images/icon.png" alt="drawing" width="70" style="float:left;display:inline;"> 
-
-# <div style="margin-left:100px"> Google Cloud Compute Services </div>
-____
 
 ## Introduction
 
