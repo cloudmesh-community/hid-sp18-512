@@ -1,4 +1,7 @@
-<h1> <img alt="icon" src="../images/icon.png" width="100" style ="float:left"> GOOGLE CLOUD COMPUTE SERVICES <hr></h1>
+<h1> <img alt="icon" src="../images/icon.png" width="100" style ="float:left"> <div style="float:left">GOOGLE CLOUD COMPUTE SERVICES </div></h1>
+<br>
+
+<hr>
 
 
 ## Introduction
