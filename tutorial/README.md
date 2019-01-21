@@ -17,7 +17,8 @@ The google cloud compute is an infrastucture as a service offering that provides
 ### Google Kubernetes Engine (GKE)
 
 Kubernetes is a container as a service that is basically an abstraction of the compute engine. It enables customers to run fully managed Docker containers. A container is a service that helps modularize applications. Why containers? Contrary to virtualization with regard to irtual machines, containers virtualize at the level of teh operating system and run the on the operating system directly. They are quite light weight, start fater than conventional VMs and use very small portion of the memory of the operating system. They also allow faster development and reliability. Kubernetes helps with the automation, monitoring, management and the deployment of these containers. 
-![](../images/kubernetes.png)
+<br>
+<img src="../images/kubernetes.png" width="650" style="margin-left:200px">
 
 ### Google App Engine (GAE)
   
