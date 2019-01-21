@@ -1,9 +1,7 @@
 
-____
+<img src="../images/icon.png" alt="drawing" width="70" style="float:left;display:inline;"> 
 
-<img src="../images/icon.png" alt="drawing" width="70" style="float:left"> 
-
-# <div style="margin-left:80px"> Google Cloud Compute Services </div>
+# <div style="margin-left:100px"> Google Cloud Compute Services </div>
 ____
 
 ## Introduction
