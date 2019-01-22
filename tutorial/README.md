@@ -42,5 +42,25 @@ Google App Engine is googles dedicated platform as a service(Paas), and is prett
 <img src="../images/app_engine.png" width="600">
 </p>
 
-<h3> 3. Setting Up a Compute Service</h3>
-This section will delve into how the setup and configure each of the above compute services in the google could. Google provides two options on how to perform configurations on these services. One has the option of using the user interface or google's commandline terminal, also know as gcloud. These tutorials will mainly focus on commanline configuration. 
+<h2> 3. Working With Compute Services</h2>
+This section will delve into how the setup and configure each of the above compute services in the google could. Google provides two options on how to perform configurations on these services. One has the option of using the user interface or google's commandline terminal, also know as gcloud. These tutorials will mainly focus on using googles interactive terminal. 
+
+<h3>3.1 Google Compute</h3>
+
+In this tutorial, we will set up a simple google compute server via the terminal, configure the server, and install conda equiped with jupyter notebook. 
+
+#### 3.1.1 Getting Started
+
+To get started, on requires to have an account with google. A gmail account would suffice. Once a account is created, login into https://cloud.google.com. This will open up a landing page that looks like the image below. On the page select  > <em>Go To Console </em>. 
+<p align="center">
+<img src="../images/landing_page.png" width="600">
+</p>
+
+To go to the consoles dashboard, a project is required. This can be created by simply clicking the > <em>Create</em> button. For this tutorial, the commandline will be used. The top right corner has a button > <em>Activate Cloud Shell</em>. Clicking it will open up there terminal at the bottom of the page. 
+ 
+<p align="center">
+<img src="../images/cloud_shell.png" width="600">
+</p>
+In the terminal, the following command can be used to create a project.
+
+>>  $ gcloud projects create project-name --organization=2000
