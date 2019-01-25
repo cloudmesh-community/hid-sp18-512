@@ -112,15 +112,17 @@ A project in GCP helps organize resources within the service. It can consists of
 #### 3.1.3 Installing Anaconda and Python
 When the virtual machine is created, it needs to be exposed to the internet inorder to download packages. In the console click on the virtual machine and ensure http and https are seleted in the options. Also, it is important to ensure that the IP address of the machine is set to "static" and not "ephemeral." The will stop the ip from changing whenever the machine is restarted.  In the Navigation Menu, this can be set by selecting >VPC Network under Networking and then selecting > External Ip Addresses. Change the type from Ephemeral to static as shown.
 
-<Image>
+<p align="center">
+<img src="../images/ipstatic.png" width="800">
+</p>
 
 Firewall settings need to be configured as well. On the same menu select Firewall rules and change the setting to match the image below. 
 
 <p align="center">
-<img src="../images/firewall.png" width="800">
+<img src="../images/firewall.png" width="500">
 </p>
 
-* To install Anaconda enter the following command;
+* To install Anaconda enter the commands below. These will extract the installation script from the internet and install Anaconda with its dependencies.
 
 >>$ https://repo.continuumio/archive/Anaconda3-2018.12-Linux-x86_64.sh
 
@@ -138,20 +140,27 @@ Firewall settings need to be configured as well. On the same menu select Firewal
 
 * This file needs to be configured for the project. Using an appropriate editor such as vim or emacs, insert the following code into the file.  Replace the port number section with the appropriate number and the ip with zeros as shown.
 
+>> $ vim ~/.jupyter/jupyter_notebook_config.py
+
 >>c = get_config()
 c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.open_browser = False
-c.NotebookApp.port = 5000
+c.NotebookApp.port = 8123
+
+<p align="center">
+<img src="../images/vim.png" width="500">
+</p>
 
 #### 3.1.4 Launch Jupyter
 
->> $ jupyter-notebook --no-browser --port=<PORT-NUMBER>
+>> $ jupyter-notebook --no-browser --port="Port Number"
 
 This should bring up the screen as below, this means the setup was a success.
 
-"screen image"
+<p align="center">
+<img src="../images/server.png" width="500">
+</p>
+Now the server is running. To launch it in the web browser, use the static ip with the appropriate port number as shown.
 
-Typing the text below in the browser will launch jupyter.
-
-> $ http://<External Static IP Address>:<Port Number>
+> $ http://"External Static IP Address":"Port Number"
 > 
