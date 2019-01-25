@@ -42,10 +42,10 @@ Google App Engine is googles dedicated platform as a service(Paas), and is prett
 <img src="../images/app_engine.png" width="600">
 </p>
 
-## 3. Working With Compute Services</h2>
+## 3. Working With Compute Services
 This section will delve into how the setup and configure each of the above compute services in the google could. Google provides two options on how to perform configurations on these services. One has the option of using the user interface or google's commandline terminal, also know as gcloud. These tutorials will mainly focus on using googles interactive terminal. 
 
-### 3.1 Google Compute</h3>
+### 3.1 Google Compute (GCE)
 
 As  mentiooned, google compute engine is the core of GCP and allows creating virtual machines with the right size for a system. In this section we will expolore how to: 
 
@@ -128,15 +128,15 @@ Firewall settings need to be configured as well. On the same menu select Firewal
 
 >>$ Anaconda3-2018.12-Linux-x86_64.sh
 
->> source .bashrc
+>> $ source .bashrc
 
 * When installation is complete the conda or pip can be used to install libraries. Next, check if the jupyter notebook configuration exists. 
 
->> ls ~/.jupyter/jupyter_notebook_config.py
+>> $ ls ~/.jupyter/jupyter_notebook_config.py
 
 * If not found, create the file.
 
->> jupyter notebook --generate-config
+>> $ jupyter notebook --generate-config
 
 * This file needs to be configured for the project. Using an appropriate editor such as vim or emacs, insert the following code into the file.  Replace the port number section with the appropriate number and the ip with zeros as shown.
 
@@ -160,12 +160,90 @@ This should bring up the screen as below, this means the setup was a success.
 <p align="center">
 <img src="../images/log.png" width="500">
 </p>
-Now the server is running. To launch it in the web browser, use the static ip with the appropriate port number as shown.
+Now the server is running. To launch it in the web browser, use the static ip with the appropriate port number as shown. Copy the token number as it will be used to login jupyter.
 
 >> $ http://"External Static IP Address":"Port Number"
 
-* The page shown below will be launched. Since no password was set, the token number provided on the terminal can be used to login.
+* The page shown below will be launched. Since no password was set, the token number provided on the terminal can be used to login. The notebook is now ready to be ran.
 
 <p align="center">
 <img src="../images/jupyter.png" width="500">
+</p>
+
+## 3.2 GOOGLE KUBERNETES ENGINE (GKE)
+
+Kubernetes Engine, built and powered by Google, brings out their experience of running applications such as gmail and youtube for many years. It makes it possible to get up and running with Kubernetes quickly without needing to install, operate ,and manage ones own kubernetes clusters. Lets set up a GKE cluster and configure it using the same project and region/zone as above.
+
+* Kubetcl - Kubernetes uses a commandline tool, <em>kubetcl</em>. It is an interface that is used in running commands on kubernetes clusters. With kubectl, one can use it to inspect, create, delete, and update resources. In the commandline type. If kubectl is installed, it will be shown in the output.
+
+>> glcoud components list
+
+<p align="center">
+<img src="../images/components.png" width="500">
+</p>
+
+* A pod is the basic most unit of kubernetes. It represents a container or two that run an application.
+  
+* A cluster is a collection of compute engine instances that run kubernetes. It contains Nodes, Master, and Node Processes.
+  *  The Master is reposible for the management of the cluster.
+  *  A Node is the computer that works on a kubernetes cluster. Every Node is managed by the master. The node host the applications that run in the cluster.
+
+<p align="center">
+<img src="../images/cluster.png" width="500">
+</p>
+
+On the console, a cluster can be created by > Navigation Menu > Kubernetes Engine > Clusters > Create cluster, or by using glcoud. Ensure, the region an zone is specified. The command below will create five nodes. The three nodes are listed under VM Instances as shown in the below image. The output of this command also will show the status of the cluster. In case it is running as shown below.
+
+>> $ gcloud container clusters create data-science-cluster --num-nodes 3
+
+<p align="center">
+<img src="../images/kub.png" width="500">
+</p>
+
+<p align="center">
+<img src="../images/kubeb.png" width="500">
+</p>
+
+Since we now have a kerbenetes cluster, clicking the connect button in the cluster console will notify the setup that we are the authorized user. This will present the command with which to configure the cluster.
+
+<p align="center">
+<img src="../images/cluster1.png" width="500">
+</p>
+
+>>$ gcloud container clusters get-credentials data-science-cluster --zone us-east1-b --project data-project-compute
+
+We can now go ahead and set up a simple wordpress website. This will be done by deploying a wordpress docker container as an image and we want it to run on port 80. The image cointains everything that is needed to run the website as a unit. Our container runs as a pod.
+
+>> $ kubectl run wordpress --image=tutum/wordpress --port=80
+
+To check the detail of the pod;
+
+>> $ kubectl get pod
+
+<p align="center">
+<img src="../images/pod.png" width="500">
+</p>
+
+When the pod is created its default configuration only allows it to be seen other machines within the cluster. We want it to be exposed to external traffic. This can be achieved by;
+
+>> kubectl expose pod wordpress-cb575548c-ldxl8 --name=wordpress -
+-type=LoadBalancer
+
+<p align="center">
+<img src="../images/expose.png" width="500">
+</p>
+
+This sets up a load balancer creates an external ip address that the pod can use to accept traffic.
+
+More information about the wordpress can be checked using the command. The gives details of the pod including ip address. The LoadBalancer Ingress IP address will be needed to direct external traffic to.
+
+>>$ kubectl describe services wordpress
+
+<p align="center">
+<img src="../images/traffic.png" width="600">
+</p>
+The wordpress site below will be launched and the user can procede to configure the website.
+
+<p align="center">
+<img src="../images/page.png" width="600">
 </p>
