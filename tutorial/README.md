@@ -158,9 +158,14 @@ c.NotebookApp.port = 8123
 This should bring up the screen as below, this means the setup was a success.
 
 <p align="center">
-<img src="../images/server.png" width="500">
+<img src="../images/log.png" width="500">
 </p>
 Now the server is running. To launch it in the web browser, use the static ip with the appropriate port number as shown.
 
-> $ http://"External Static IP Address":"Port Number"
-> 
+>> $ http://"External Static IP Address":"Port Number"
+
+* The page shown below will be launched. Since no password was set, the token number provided on the terminal can be used to login.
+
+<p align="center">
+<img src="../images/jupyter.png" width="500">
+</p>
